@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  }
+
+.showcase {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px;
+  display: flex; /* puts everything inside showcase class into a row */
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(darkblue,blue);
+  color: white;
+  z-index: 2; /* so the showcase class is always in front of the menu */
+  transition: .5s;
+}
+
+.showcase header {
+  position: absolute; /* take the header class outside of the flex box */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 50px;
+  z-index: 1000;
+  display: flex; /* side by side */
+  align-items: center;
+  justify-content: space-between; /* take the space of the width and put it between logo class and toggle class*/
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .8;
+}
+
+.showcase header {
+  position: absolute; /* take the header class outside of the flex box */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 50px;
+  z-index: 1000;
+  display: flex; /* side by side */
+  align-items: center;
+  justify-content: space-between; /* take the space of the width and put it between logo class and toggle class*/
+}
+
+.showcase.active {
+  right: 300px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  position: relative;
+  margin-top: 50px;
+  z-index: 10;
+}
+
+.text h2 {
+  font-size: 4em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.text h3 {
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}  
+
+.text p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+.text h3#two {
+  margin-top: 20px;
+}
+
+.logo {
+  cursor: pointer;
+  transition: .5s;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+  color: deepskyblue;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url('../img/menu.png');
+  background-repeat: no-repeat;
+  background-size: 45px;
+  background-position: center;
+  cursor: pointer;
+  filter: invert(1);
+  
+}
+
+.toggle.active {
+  background: url('../img/close.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  cursor: pointer;
+  filter: invert(0);
+}
+
+.menu {
+  background: linear-gradient(rgb(0, 59, 136),rgb(0, 106, 155));
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  position: fixed;
+  list-style: none;
+}
+
+.menu ul li {
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 2em;
+  transition: .5s;
+}
+
+.menu ul li:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu ul li a:hover {
+  color: deepskyblue;
+  font-weight: 900;
+}
+
+#gs {
+  background: white;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  transition: .5s;
+  margin-top: 5px;
+}
+
+#gs:hover {
+  letter-spacing: 2px;
+  background: darkturquoise;
+}
+
+.social {
+  width: 87%;
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li img {
+  width: 23px;
+  height: 23px;
+  filter: invert(1);
+  margin-right: 20px;
+  transition: .5s;
+}
+
+.social li img#faceID {
+  filter: invert(0);
+  margin-bottom: 5px;
+}
+
+.social li img:hover {
+  transform: translateY(-5px) scale(1.5);
+}
+
+.goUP img {
+  width: 32px;
+  height: 32px;
+  transition: .5s;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.goUP img:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+
+/* Some Media Qurey For More Responsivity */
+
+@media(max-width: 850px) { /* Change Settings For Devices With Width Less Than 850px */
+  .showcase {
+    padding: 10px 40px;
+    margin-bottom: 100px;
+  }
+
+  .showcase header {
+    padding: 30px 25px;
+  }
+
+  .text {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .text h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .text h3 {
+    font-size: 1.3em;
+    font-weight: 800;
+  }
+
+  .text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 300px;
+  }
+
+  .social {
+    margin-top: 100px;
+  }
+
+  .toggle.active {
+    top: 0;
+    left: 100px;
+  }
+}
+
+@media(max-width:285px) {
+  .toggle.active {
+    left: 300px;
+  }
+}
+
+.container {
+  border-radius: 20px;
+  background: rgba(0,0,139,0.4);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background: rgba(0,0,139,0.4);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+input[type=submit]:hover {
+  background-color: deepskyblue;
+  letter-spacing: 2px;
+}
+
+@media(max-width:395px){
+  input[type=text], select, textarea {
+    width: 100%;
+  }
+}
